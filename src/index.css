@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.conic {
+  background: conic-gradient(
+    #ff9494 0% 40%,
+    #0066c5 40% 50%,
+    #ff0000 50% 80%,
+    #60a662 80% 100%
+  );
+}
+
+.thing1 {
+  clip-path: polygon(0 0, 60% 0, 60% 83%, 0% 100%);
+}
+.thing2 {
+  clip-path: polygon(0 0, 95% 0, 98% 45%, 0 47%);
+}
+.thing3 {
+  clip-path: polygon(100% 0, 100% 69%, 51% 69%, 51% 61%, 0 62%, 0 10%);
+}
+.thing4 {
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
