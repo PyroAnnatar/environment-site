@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 import WiddlePanel from "../components/WiddlePanel";
 
 const FarmAnalytics = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const modalRef = useRef(null);
+
+  function handleClick(e) {
+    if (modalRef.current && !modalRef.current.contains(e.target))
+      setIsOpen(false);
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        document.addEventListener("click", handleClick);
+      }, 0);
+    }
+    return () => document.removeEventListener("click", handleClick);
+  }, [isOpen]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsOpen(false);
+  }
   return (
-    <div className="w-10/12 h-screen bg-[#4A7A4C] flex justify-center items-center p-4 pl-0">
-      {/* Window */}
+    <>
       <div className="w-full h-[99%] bg-white rounded-[25px] py-3 px-10 flex flex-col gap-14">
         <div className="flex justify-between items-center">
           <h2 className="text-[38px] font-bold text-[#308B34]">Farm 1</h2>
 
-          <button className="bg-[#4A7A4C] text-white flex justify-center items-center py-2 px-8 rounded-[6px] gap-2 font-bold text-[23px]">
+          <button
+            onClick={() => setIsOpen(true)}
+            className="bg-[#4A7A4C] text-white flex justify-center items-center py-2 px-8 rounded-[6px] gap-2 font-bold text-[23px]"
+          >
             + Add Crop
           </button>
         </div>
@@ -55,12 +80,22 @@ const FarmAnalytics = () => {
               evalColor="#C5B100"
             />
           </div>
-          <div>
+          <div className="relative">
             <img
               src="/Rectangle 20.png"
               alt="Crops"
               className="object-fill h-full w-full max-h-[350px]"
             />
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+              <div className="flex gap-4">
+                <img src="/arrow.png" alt="Left" className="cursor-pointer" />
+                <img
+                  src="/arrow.png"
+                  alt="Right"
+                  className="rotate-180 cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
           <div></div>
           <div className="flex gap-4 justify-center items-center">
@@ -92,8 +127,80 @@ const FarmAnalytics = () => {
             Efficacy Rating
           </span>
         </div>
+        {isOpen ? (
+          <div
+            ref={modalRef}
+            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 absolute bg-white w-[85%] h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex flex-col justify-center items-center gap-4"
+          >
+            <div className="flex justify-start w-full">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="border-[5px] border-[#4A7A4C] text-[#4A7A4C] font-bold text-[24px] rounded-[14px] py-1 px-7"
+              >
+                Back
+              </button>
+            </div>
+            <form className="flex flex-col gap-20 justify-start items-center w-2/3 grow pt-5">
+              <h2 className="uppercase text-[#4A7A4C] text-[38px] font-semibold">
+                Crop Details
+              </h2>
+              <div className="text-[24px] text-[#545151] w-full flex flex-col gap-10">
+                <div className="relative">
+                  <img
+                    src="/Vector(8).png"
+                    alt=""
+                    className="absolute top-[50%] -translate-y-[50%] -left-10"
+                  />
+                  <input
+                    type="text"
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 pl-5 text-[24px] text-[#545151] cursor-pointer"
+                    placeholder="Crop Name"
+                    disabled
+                  />
+                  <img
+                    src="/Vector(12).png"
+                    alt=""
+                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer"
+                  />
+                </div>
+                <div className="relative">
+                  <img
+                    src="/Vector(10).png"
+                    alt=""
+                    className="absolute top-[50%] -translate-y-[50%] -left-[50px]"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Soil Type"
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 pl-5"
+                    disabled
+                  />
+                </div>
+                <div className="relative w-3/6">
+                  <input
+                    type="text"
+                    placeholder="Add Image"
+                    disabled
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-2 px-3 pl-5 cursor-pointer"
+                  />
+                  <img
+                    src="/Vector(11).png"
+                    alt=""
+                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer"
+                  />
+                </div>
+              </div>
+              <button
+                onClick={handleSubmit}
+                className="uppercase font-medium text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-14"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        ) : null}
       </div>
-    </div>
+    </>
   );
 };
 

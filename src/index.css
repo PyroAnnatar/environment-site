@@ -28,3 +28,112 @@ body {
 .thing4 {
   clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
 }
+
+.animation1 {
+  animation: slidey-from-right ease-in-out 500ms;
+}
+
+.animation2 {
+  animation: poppy ease-in-out 500ms;
+}
+
+.animation3 {
+  animation: slidey-from-left ease-in-out 500ms;
+}
+.delay1 {
+  animation-delay: 50ms;
+}
+.delay2 {
+  animation-delay: 100ms;
+}
+
+@keyframes slidey-from-right {
+  0% {
+    translate: 100%;
+    opacity: 0;
+  }
+  65% {
+    opacity: 0.4;
+  }
+  100% {
+    translate: 0%;
+    opacity: 1;
+  }
+}
+@keyframes slidey-from-left {
+  0% {
+    translate: -100%;
+    opacity: 0;
+  }
+  65% {
+    opacity: 0.4;
+  }
+  100% {
+    translate: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes poppy {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  /* 65% {
+    scale: 0.4;
+    opacity: 0.4;
+  } */
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.hazard {
+  background: linear-gradient(
+    135deg,
+    black 5%,
+    yellow 5%,
+    yellow 10%,
+    black 10%,
+    black 15%,
+    yellow 15%,
+    yellow 20%,
+    black 20%,
+    black 25%,
+    yellow 25%,
+    yellow 30%,
+    black 30%,
+    black 35%,
+    yellow 35%,
+    yellow 40%,
+    black 40%,
+    black 45%,
+    yellow 45%,
+    yellow 50%,
+    black 50%,
+    black 55%,
+    yellow 55%,
+    yellow 60%,
+    black 60%,
+    black 65%,
+    yellow 65%,
+    yellow 70%,
+    black 70%,
+    black 75%,
+    yellow 75%,
+    yellow 80%,
+    black 80%,
+    black 85%,
+    yellow 85%,
+    yellow 90%,
+    black 90%,
+    black 95%,
+    yellow 95%,
+    yellow 100%
+  );
+}
+
+.memes {
+  object-position: 70% 100%;
+}
