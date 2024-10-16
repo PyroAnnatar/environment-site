@@ -179,7 +179,7 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
           </div>
         </div>
       </div>
-      {/* <Test test={test} testy={testy} /> */}
+      <Test test={test} testy={testy} />
     </form>
   );
 };
