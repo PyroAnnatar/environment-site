@@ -23,6 +23,8 @@ const Livestock = () => {
     },
   ]);
 
+  console.log(livestock);
+
   const [newAnimoo, setNewAnimoo] = useState({
     id: crypto.randomUUID(),
     type: "",
@@ -100,7 +102,7 @@ const Livestock = () => {
           <button className="bg-[#4A7A4C] text-white flex justify-center items-center p-1 lg:py-2 lg:px-4 rounded-[6px] gap-1 md:gap-4 font-bold lg:text-[23px]">
             <span>Total:</span>{" "}
             <span className="text-sm lg:text-[30px] font-semibold">
-              {livestock.reduce((a, b) => a.count + b.count)}
+              {livestock.reduce((a, b) => a + +b.count, 0)}
             </span>
           </button>
           <button className="bg-[#4A7A4C] text-white flex justify-center items-center p-1 lg:py-2 lg:px-4 rounded-[6px] gap-1 md:gap-4 font-bold lg:text-[23px]">
@@ -113,12 +115,12 @@ const Livestock = () => {
             </span>
           </button>
         </div>
-        <div className="flex flex-col md:flex-row justify-start items-stretch gap-4 font-bold text-[23px]">
+        <div className="flex flex-col md:flex-row justify-stretch md:justify-start items-stretch gap-4 font-bold text-[23px]">
           {livestock.map((animal) => {
             return (
               <div
                 key={animal.id}
-                className="lg:w-1/4 shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 flex flex-col justify-between text-[#4A7A4C] text-lg"
+                className="md:w-1/3 lg:w-1/4 shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 flex flex-col justify-between text-[#4A7A4C] text-lg min-h-[300px]"
               >
                 <h2 className="text-[25px] lg:text-[30px]">{animal.type}</h2>
                 <div>
