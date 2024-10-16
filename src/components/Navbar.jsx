@@ -11,9 +11,9 @@ const Navbar = ({ handleOpenModal, currentUser, clearCurrentUser }) => {
   }
 
   return (
-    <div className="w-2/12 h-full flex flex-col gap-24">
+    <div className="w-4/12 md:w-2/12 h-full flex flex-col gap-24">
       {/* Profile */}
-      <div className="text-white text-center flex flex-col gap-1 justify-center items-center pt-10">
+      <div className="text-white text-center flex flex-col gap-1 justify-center items-center pt-10 px-2">
         <img
           src="/slave driver doge.jpg"
           alt="Pepega Photo"
@@ -33,13 +33,13 @@ const Navbar = ({ handleOpenModal, currentUser, clearCurrentUser }) => {
         </button>
       </div>
       {/* Nav */}
-      <nav className="flex flex-col justify-center items-start text-white font-bold text-[23px] text-center">
+      <nav className="flex flex-col justify-center items-start text-white font-bold md:text-[23px] text-center">
         <ul className="w-full">
           <li>
             <NavLink
               to="Farm-Analytics"
               className={({ isActive }) =>
-                `px-6 py-2 block w-full ${
+                `px-1 lg:px-6 py-1 lg:py-2 block w-full ${
                   isActive ? "bg-white text-[#4A7A4C]" : ""
                 }`
               }
@@ -51,7 +51,7 @@ const Navbar = ({ handleOpenModal, currentUser, clearCurrentUser }) => {
             <NavLink
               to="Livestock"
               className={({ isActive }) =>
-                `delay1 px-6 py-2 block w-full ${
+                `delay1 px-1 lg:px-6 py-1 lg:py-2 block w-full ${
                   isActive ? "bg-white text-[#4A7A4C]" : ""
                 }`
               }
@@ -64,7 +64,7 @@ const Navbar = ({ handleOpenModal, currentUser, clearCurrentUser }) => {
               to="/Dashboard"
               end
               className={({ isActive }) =>
-                `delay2 px-6 py-2 block w-full ${
+                `delay2 px-1 lg:px-6 py-1 lg:py-2 block w-full ${
                   isActive ? "bg-white text-[#4A7A4C]" : ""
                 }`
               }
@@ -78,7 +78,7 @@ const Navbar = ({ handleOpenModal, currentUser, clearCurrentUser }) => {
       <div className="w-full flex justify-center items-center px-4">
         <button
           onClick={handleOpenModal}
-          className="text-[23px] animation2 font-bold text-[#308B34] bg-white py-2 px-4 rounded-[6px] w-full"
+          className="md:text-[23px] animation2 font-bold text-[#308B34] bg-white py-2 px-4 rounded-[6px] w-full"
         >
           + Add Farm
         </button>

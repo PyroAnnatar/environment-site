@@ -46,18 +46,18 @@ const Login = ({ test, testy, modifyCurrentUser, users }) => {
   }
 
   return (
-    <div className="h-screen flex overflow-hidden">
-      <div className="w-8/12">
+    <div className="h-screen flex flex-col lg:flex-row overflow-hidden">
+      <div className="max-h-[200px] md:max-h-[250px] lg:max-h-none lg:w-8/12">
         <img
           src="Rectangle 1 (2).png"
           alt="Stuff"
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-4/12 p-12 flex justify-center items-center">
+      <div className="lg:w-4/12 p-4 px-6 md:px-0 md:p-8 lg:p-12 flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center gap-10"
+          className="flex flex-col justify-center items-center gap-1 lg:gap-10"
         >
           <h1 className="text-[#4A7A4C] text-[37px] font-bold self-start">
             Sign In
@@ -104,7 +104,7 @@ const Login = ({ test, testy, modifyCurrentUser, users }) => {
 
             <label
               htmlFor="compliant"
-              className="text-[16px] font-normal w-2/3 self-start"
+              className="text-[16px] font-normal w-full lg:w-2/3 self-start"
             >
               <input
                 name="compliant"
@@ -129,7 +129,7 @@ const Login = ({ test, testy, modifyCurrentUser, users }) => {
               <p>{errorMessage}</p>
             </div>
           </div>
-          <div className="flex flex-col justify-center gap-8 items-stretch text-[27px] w-3/4">
+          <div className="flex flex-col justify-center gap-2 sm:gap-4 md:gap-8 items-stretch text-[27px] w-3/4">
             <button
               type="submit"
               className="animation1 font-extrabold bg-[#308B34] border-4 border-transparent rounded-[9px] text-white py-3 px-4"

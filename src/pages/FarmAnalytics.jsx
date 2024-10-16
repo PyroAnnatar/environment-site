@@ -27,18 +27,20 @@ const FarmAnalytics = () => {
   }
   return (
     <>
-      <div className="w-full h-[99%] bg-white rounded-[25px] py-3 px-10 flex flex-col gap-14">
+      <div className="w-full h-[99%] bg-white rounded-[25px] p-4 md:py-3 md:px-10 flex flex-col gap-4 md:gap-10">
         <div className="flex justify-between items-center">
-          <h2 className="text-[38px] font-bold text-[#308B34]">Farm 1</h2>
+          <h2 className="text-[18px] lg:text-[38px] font-bold text-[#308B34]">
+            Farm 1
+          </h2>
 
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-[#4A7A4C] text-white flex justify-center items-center py-2 px-8 rounded-[6px] gap-2 font-bold text-[23px]"
+            className="bg-[#4A7A4C] text-white flex justify-center items-center py-1 px-2 md:py-2 md:px-4 rounded-[6px] gap-2 font-bold md:text-[23px]"
           >
             + Add Crop
           </button>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <WiddlePanel
             name="Nitrogen"
             evaluation="Good"
@@ -59,8 +61,8 @@ const FarmAnalytics = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 grid-rows-[1fr,75px] place-items-center gap-4">
-          <div className="flex flex-col items-start gap-4">
+        <div className="grid md:grid-cols-2 md:grid-rows-[1fr,75px] place-items-center gap-4">
+          <div className="flex flex-col items-start gap-4 w-full md:w-auto">
             <WiddlePanel
               name="Humidity"
               evaluation="Good"
@@ -98,24 +100,34 @@ const FarmAnalytics = () => {
             </div>
           </div>
           <div></div>
-          <div className="flex gap-4 justify-center items-center">
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <div className="border-2 border-[#4A7A4C] rounded-[61px] flex gap-4 justify-center items-center py-1 px-4">
               <div className="flex gap-1 justify-center items-center">
-                <img src="/Vector(8).png" alt="Wheat icon" />
-                <span className="text-[23px] font-bold text-[#308B34]">
+                <img
+                  src="/Vector(8).png"
+                  alt="Wheat icon"
+                  className="w-[25px]"
+                />
+                <span className="md:text-[23px] font-bold text-[#308B34]">
                   Crop:
                 </span>
               </div>
-              <span className="text-[30px] font-semibold shrink-0">Wheat</span>
+              <span className="md:text-[30px] font-semibold shrink-0">
+                Wheat
+              </span>
             </div>
             <div className="border-2 border-[#4A7A4C] rounded-[61px] flex gap-4 justify-center items-center py-1 px-3">
               <div className="flex gap-1 justify-center items-center">
-                <img src="/Vector(9).png" alt="Wheat icon" />
-                <span className="text-[23px] font-bold text-[#308B34]">
+                <img
+                  src="/Vector(9).png"
+                  alt="Wheat icon"
+                  className="w-[25px]"
+                />
+                <span className="md:text-[23px] font-bold text-[#308B34]">
                   Area:
                 </span>
               </div>
-              <span className="text-[30px] font-semibold shrink-0">
+              <span className="md:text-[30px] font-semibold shrink-0">
                 25 Acres
               </span>
             </div>
@@ -123,14 +135,14 @@ const FarmAnalytics = () => {
         </div>
 
         <div className="w-3/4 border-[5px] border-[#4A7A4C] text-center rounded-[12px] self-center">
-          <span className="text-[32px] font-bold text-[#4A7A4C]">
+          <span className="text-[24px] md:text-[32px] font-bold text-[#4A7A4C]">
             Efficacy Rating
           </span>
         </div>
         {isOpen ? (
           <div
             ref={modalRef}
-            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 absolute bg-white w-[85%] h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex flex-col justify-center items-center gap-4"
+            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 absolute bg-white w-[85%] h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
           >
             <div className="flex justify-start w-full">
               <button

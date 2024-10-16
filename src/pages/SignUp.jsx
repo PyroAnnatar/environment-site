@@ -53,20 +53,23 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="h-screen flex overflow-hidden">
-      <div className="w-8/12">
+    <form
+      onSubmit={handleSubmit}
+      className="h-screen flex flex-col md:flex-row overflow-hidden"
+    >
+      <div className="max-h-[200px] md:max-h-none md:w-6/12 lg:w-8/12">
         <img
           src="/Rectangle 1-1.png"
           alt="Stuff"
           className="h-full w-full object-cover"
         />
       </div>
-      <div className="w-4/12 p-12 flex justify-center items-center">
-        <div className="flex flex-col justify-center items-center gap-10">
+      <div className=" md:w-6/12 lg:w-4/12 p-6 md:p-8 lg:p-12 flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-2 lg:gap-10">
           <h1 className="text-[#4A7A4C] text-[37px] font-bold self-start">
             Sign Up
           </h1>
-          <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col gap-4 lg:gap-8 items-center">
             <div className="relative w-full">
               <input
                 type="text"
@@ -138,7 +141,7 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
 
             <label
               htmlFor="compliant"
-              className="text-[16px] font-normal w-2/3 self-start"
+              className="text-[16px] font-normal w-full lg:w-2/3 self-start"
             >
               <input
                 type="checkbox"
@@ -176,7 +179,7 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
           </div>
         </div>
       </div>
-      <Test test={test} testy={testy} />
+      {/* <Test test={test} testy={testy} /> */}
     </form>
   );
 };
