@@ -79,14 +79,14 @@ const Livestock = () => {
     <>
       {/* <div className="w-full h-[99%] bg-white rounded-[25px] py-3 px-10 flex flex-col gap-10"> */}
       <div className="w-full h-[99%] bg-white rounded-[25px] p-4 md:py-3 md:px-10 flex flex-col gap-4 md:gap-10">
-        <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center text-[22px]">
+        <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center text-[22px] gap-2">
           <h2 className="text-[18px] lg:text-[38px] font-bold text-[#308B34]">
             Manage Livestock
           </h2>
           <div className="flex gap-2 lg:gap-4 text-sm sm:text-base text-center">
             <button className="bg-[#4A7A4C] text-white flex justify-center items-center py-1 px-2 md:py-2 md:px-4 rounded-[6px] gap-2 font-bold">
               <div className="w-[25px]">
-                <img src="/Vector(5).png" alt="" className="" />
+                <img src="/Vector(5).png" alt="" />
               </div>
               View Live
             </button>
@@ -150,7 +150,7 @@ const Livestock = () => {
       {isOpen ? (
         <div
           ref={modalRef}
-          className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-[90%] md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
+          className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
         >
           <div className="flex justify-start w-full">
             <button
@@ -160,7 +160,7 @@ const Livestock = () => {
               Back
             </button>
           </div>
-          <form className="flex flex-col gap-9 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
+          <form className="flex flex-col gap-5 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
             <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] text-center font-semibold">
               Cattle Details
             </h2>

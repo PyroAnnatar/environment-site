@@ -46,8 +46,8 @@ const Login = ({ test, testy, modifyCurrentUser, users }) => {
   }
 
   return (
-    <div className="h-screen flex flex-col lg:flex-row overflow-hidden">
-      <div className="max-h-[200px] md:max-h-[250px] lg:max-h-none lg:w-8/12">
+    <div className="flex flex-col lg:flex-row overflow-hidden">
+      <div className="w-full h-[200px] md:h-[400px] lg:h-screen lg:w-8/12">
         <img
           src="Rectangle 1 (2).png"
           alt="Stuff"

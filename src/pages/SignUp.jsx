@@ -55,9 +55,9 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="h-screen flex flex-col md:flex-row overflow-hidden"
+      className="flex flex-col md:flex-row overflow-hidden"
     >
-      <div className="max-h-[200px] md:max-h-none md:w-6/12 lg:w-8/12">
+      <div className="w-full h-[200px] md:h-screen lg:w-8/12">
         <img
           src="/Rectangle 1-1.png"
           alt="Stuff"

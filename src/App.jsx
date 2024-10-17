@@ -26,7 +26,7 @@ import Error from "./pages/Error";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [users, setUsers] = useState([]);
-  const [test, setTest] = useState(true);
+  const [test, setTest] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
   function testy() {

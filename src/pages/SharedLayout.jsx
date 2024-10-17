@@ -42,17 +42,17 @@ const SharedLayout = ({
         {isOpen ? (
           <div
             ref={modalRef}
-            className=" shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-[90%] md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center"
+            className=" shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center"
           >
             <div className="flex justify-start w-full">
               <button
                 onClick={handleCloseModal}
-                className="border-[5px] border-[#4A7A4C] text-[#4A7A4C] font-bold  md:text-[24px] rounded-[14px] py-1 px-4 md:px-7"
+                className="border-[5px] border-[#4A7A4C] text-[#4A7A4C] font-bold md:text-[24px] rounded-[14px] py-1 px-4 md:px-7"
               >
                 Back
               </button>
             </div>
-            <form className="flex flex-col gap-9 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
+            <form className="flex flex-col gap-5 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
               <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] font-semibold text-center">
                 Farm Details
               </h2>

@@ -99,35 +99,30 @@ const FarmAnalytics = () => {
               </div>
             </div>
           </div>
-          <div></div>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <div className="border-2 border-[#4A7A4C] rounded-[61px] flex gap-4 justify-center items-center py-1 px-4">
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center md:col-span-2">
+            <div className="border-2 border-[#4A7A4C] rounded-[61px] flex md:gap-2 lg:gap-4 justify-center items-center py-1 px-4">
               <div className="flex gap-1 justify-center items-center">
-                <img
-                  src="/Vector(8).png"
-                  alt="Wheat icon"
-                  className="w-[25px]"
-                />
+                <div className="w-[25px]">
+                  <img src="/Vector(8).png" alt="Wheat icon" className="" />
+                </div>
                 <span className="md:text-[23px] font-bold text-[#308B34]">
                   Crop:
                 </span>
               </div>
-              <span className="md:text-[30px] font-semibold shrink-0">
+              <span className="md:text-[23px] font-semibold shrink-0">
                 Wheat
               </span>
             </div>
-            <div className="border-2 border-[#4A7A4C] rounded-[61px] flex gap-4 justify-center items-center py-1 px-3">
+            <div className="border-2 border-[#4A7A4C] rounded-[61px] flex md:gap-2 lg:gap-4 justify-center items-center py-1 px-3">
               <div className="flex gap-1 justify-center items-center">
-                <img
-                  src="/Vector(9).png"
-                  alt="Wheat icon"
-                  className="w-[25px]"
-                />
+                <div className="w-[25px]">
+                  <img src="/Vector(9).png" alt="Wheat icon" className="" />
+                </div>
                 <span className="md:text-[23px] font-bold text-[#308B34]">
                   Area:
                 </span>
               </div>
-              <span className="md:text-[30px] font-semibold shrink-0">
+              <span className="md:text-[23px] font-semibold shrink-0">
                 25 Acres
               </span>
             </div>
@@ -142,69 +137,59 @@ const FarmAnalytics = () => {
         {isOpen ? (
           <div
             ref={modalRef}
-            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 absolute bg-white w-[85%] h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
+            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
           >
             <div className="flex justify-start w-full">
               <button
                 onClick={() => setIsOpen(false)}
-                className="border-[5px] border-[#4A7A4C] text-[#4A7A4C] font-bold text-[24px] rounded-[14px] py-1 px-7"
+                className="border-[5px] border-[#4A7A4C] text-[#4A7A4C] font-bold md:text-[24px] rounded-[14px] py-1 px-4 md:px-7"
               >
                 Back
               </button>
             </div>
-            <form className="flex flex-col gap-20 justify-start items-center w-2/3 grow pt-5">
-              <h2 className="uppercase text-[#4A7A4C] text-[38px] font-semibold">
+            <form className="flex flex-col gap-5 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
+              <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] font-semibold text-center">
                 Crop Details
               </h2>
-              <div className="text-[24px] text-[#545151] w-full flex flex-col gap-10">
-                <div className="relative">
-                  <img
-                    src="/Vector(8).png"
-                    alt=""
-                    className="absolute top-[50%] -translate-y-[50%] -left-10"
-                  />
+              <div className="md:text-[24px] text-[#545151] w-full flex flex-col gap-10">
+                <div className="relative flex items-center gap-2">
+                  <img src="/Vector(8).png" alt="" className="w-[25px]" />
                   <input
                     type="text"
-                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 pl-5 text-[24px] text-[#545151] cursor-pointer"
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151] cursor-pointer"
                     placeholder="Crop Name"
                     disabled
                   />
                   <img
                     src="/Vector(12).png"
                     alt=""
-                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer"
+                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer w-[25px]"
                   />
                 </div>
-                <div className="relative">
-                  <img
-                    src="/Vector(10).png"
-                    alt=""
-                    className="absolute top-[50%] -translate-y-[50%] -left-[50px]"
-                  />
+                <div className="flex items-center gap-2">
+                  <img src="/Vector(10).png" alt="" className="w-[25px]" />
                   <input
                     type="text"
                     placeholder="Soil Type"
                     className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 pl-5"
-                    disabled
                   />
                 </div>
-                <div className="relative w-3/6">
+                <div className="relative w-full lg:w-3/6">
                   <input
                     type="text"
                     placeholder="Add Image"
-                    disabled
-                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-2 px-3 pl-5 cursor-pointer"
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5"
                   />
                   <img
                     src="/Vector(11).png"
                     alt=""
-                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer"
+                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer w-[25px]"
                   />
                 </div>
               </div>
               <button
                 onClick={handleSubmit}
-                className="uppercase font-medium text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-14"
+                className="uppercase font-medium text-[24px] md:text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-2 md:px-14"
               >
                 Submit
               </button>
