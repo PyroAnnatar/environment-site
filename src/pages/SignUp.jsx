@@ -177,9 +177,9 @@ const SignUp = ({ test, testy, users, handleAddUser, modifyCurrentUser }) => {
               <span className="block w-full">Sign Up</span>
             </button>
           </div>
+          <Test test={test} testy={testy} />
         </div>
       </div>
-      <Test test={test} testy={testy} />
     </form>
   );
 };
