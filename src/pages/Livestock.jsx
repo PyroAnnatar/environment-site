@@ -120,7 +120,7 @@ const Livestock = () => {
             return (
               <div
                 key={animal.id}
-                className="md:w-1/3 lg:w-1/4 shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 flex flex-col justify-between text-[#4A7A4C] text-lg min-h-[300px]"
+                className="md:w-1/3 lg:w-1/4 shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-3 px-5 flex flex-col gap-2 justify-between text-[#4A7A4C] text-lg min-h-[300px]"
               >
                 <h2 className="text-[25px] lg:text-[30px]">{animal.type}</h2>
                 <div>
@@ -150,7 +150,7 @@ const Livestock = () => {
       {isOpen ? (
         <div
           ref={modalRef}
-          className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
+          className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-stretch items-center gap-4"
         >
           <div className="flex justify-start w-full">
             <button
@@ -160,44 +160,43 @@ const Livestock = () => {
               Back
             </button>
           </div>
-          <form className="flex flex-col gap-5 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
-            <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] text-center font-semibold">
+          <form className="flex flex-col justify-between items-center md:w-2/3 lg:w-2/4 gap-4 sm:pt-5">
+            <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] col-span-2 text-center font-semibold">
               Cattle Details
             </h2>
-            <div className="md:text-[24px] text-[#545151] w-full flex flex-col gap-10">
-              <div className="flex items-center gap-2">
+            <div className="md:text-[24px] grid gap-x-2 gap-y-6 place-items-center w-full grid-cols-[25px_1fr] text-[#545151]">
+              <div>
                 <img src="/Group.png" alt="" className="w-[25px]" />
-                <input
-                  value={newAnimoo.type}
-                  name="type"
-                  onChange={handleInputChange}
-                  type="text"
-                  className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151]"
-                  placeholder="Enter the Cattle Type"
-                />
               </div>
-              <div className="flex items-center gap-2">
-                <input
-                  name="breed"
-                  onChange={handleInputChange}
-                  value={newAnimoo.breed}
-                  type="text"
-                  placeholder="Breed"
-                  className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5"
-                />
-              </div>
-              <div className="flex items-center gap-2">
-                <img src="/Vector (3).png" alt="" className="w-[25px]" />
-                <input
-                  name="count"
-                  onChange={handleInputChange}
-                  value={newAnimoo.count}
-                  type="number"
-                  className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151]"
-                  placeholder="Count"
-                />
-              </div>
-              <div className="relative w-full lg:w-3/6">
+              <input
+                value={newAnimoo.type}
+                name="type"
+                onChange={handleInputChange}
+                type="text"
+                className="bg-white border col-start-2 border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151]"
+                placeholder="Enter the Cattle Type"
+              />
+
+              <input
+                name="breed"
+                onChange={handleInputChange}
+                value={newAnimoo.breed}
+                type="text"
+                placeholder="Breed"
+                className="bg-white col-start-2 border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5"
+              />
+
+              <img src="/Vector (3).png" alt="" className="w-[25px]" />
+              <input
+                name="count"
+                onChange={handleInputChange}
+                value={newAnimoo.count}
+                type="number"
+                className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151]"
+                placeholder="Count"
+              />
+
+              <div className="col-start-2 place-self-start relative w-full lg:w-3/6">
                 <input
                   name="image"
                   onChange={handleInputChange}
@@ -212,7 +211,8 @@ const Livestock = () => {
                   className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer w-[25px]"
                 />
               </div>
-              <div className="relative">
+
+              <div className="relative w-full col-start-2">
                 <input
                   name="gender"
                   onChange={handleInputChange}
@@ -232,7 +232,7 @@ const Livestock = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="uppercase font-medium text-[24px] md:text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-2 md:px-14"
+              className="uppercase col-span-2 font-medium text-[24px] md:text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-2 md:px-14"
             >
               Submit
             </button>

@@ -4,7 +4,9 @@ import WiddlePanel from "../components/WiddlePanel";
 
 const FarmAnalytics = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  // const [crops, setCrops] = useState([
+  //   { id: crypto.randomUUID(), type: "Wheat", soilType: "Boo" },
+  // ]);
   const modalRef = useRef(null);
 
   function handleClick(e) {
@@ -137,7 +139,7 @@ const FarmAnalytics = () => {
         {isOpen ? (
           <div
             ref={modalRef}
-            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-center items-center gap-4"
+            className="shadow-[0_0_27px_rgba(0,0,0,0.2)] rounded-[16px] py-5 px-7 md:py-3 md:px-5 absolute bg-white w-full md:w-[85%] md:h-[85%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-3/4 md:-translate-x-1/2 flex flex-col justify-stretch items-center gap-4"
           >
             <div className="flex justify-start w-full">
               <button
@@ -147,38 +149,35 @@ const FarmAnalytics = () => {
                 Back
               </button>
             </div>
-            <form className="flex flex-col gap-5 sm:gap-4 justify-start items-center md:w-2/3 grow pt-5">
-              <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] font-semibold text-center">
+            <form className="flex flex-col justify-between items-center md:w-2/3 lg:w-2/4 gap-4 sm:pt-5">
+              <h2 className="uppercase text-[#4A7A4C] text-[20px] md:text-[38px] col-span-2 text-center font-semibold">
                 Crop Details
               </h2>
-              <div className="md:text-[24px] text-[#545151] w-full flex flex-col gap-10">
-                <div className="relative flex items-center gap-2">
+              <div className="md:text-[24px] grid gap-x-2 gap-y-6 place-items-center w-full grid-cols-[25px_1fr] text-[#545151]">
+                <div>
                   <img src="/Vector(8).png" alt="" className="w-[25px]" />
-                  <input
-                    type="text"
-                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151] cursor-pointer"
-                    placeholder="Crop Name"
-                    disabled
-                  />
-                  <img
-                    src="/Vector(12).png"
-                    alt=""
-                    className="absolute top-[50%] -translate-y-[50%] right-2 cursor-pointer w-[25px]"
-                  />
                 </div>
-                <div className="flex items-center gap-2">
-                  <img src="/Vector(10).png" alt="" className="w-[25px]" />
+                <input
+                  name="cropName"
+                  type="text"
+                  className="bg-white border col-start-2 border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5 md:text-[24px] text-[#545151]"
+                  placeholder="Crop Name"
+                />
+
+                <img src="/Vector(10).png" alt="" className="w-[25px]" />
+                <input
+                  name="soilType"
+                  type="number"
+                  placeholder="Soil Type"
+                  className="bg-white col-start-2 border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5"
+                />
+
+                <div className="col-start-2 place-self-start relative w-full lg:w-3/6">
                   <input
-                    type="text"
-                    placeholder="Soil Type"
-                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 pl-5"
-                  />
-                </div>
-                <div className="relative w-full lg:w-3/6">
-                  <input
+                    name="image"
                     type="text"
                     placeholder="Add Image"
-                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-1 px-3 md:pl-5"
+                    className="bg-white border border-[#063F08] rounded-[14px] w-full py-2 px-3 pl-5"
                   />
                   <img
                     src="/Vector(11).png"
@@ -188,8 +187,8 @@ const FarmAnalytics = () => {
                 </div>
               </div>
               <button
-                onClick={handleSubmit}
-                className="uppercase font-medium text-[24px] md:text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-2 md:px-14"
+                type="submit"
+                className="uppercase col-span-2 font-medium text-[24px] md:text-[30px] bg-[#4A7A4C] text-white rounded-[8px] py-1 px-2 md:px-14"
               >
                 Submit
               </button>

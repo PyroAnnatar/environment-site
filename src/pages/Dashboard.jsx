@@ -44,7 +44,7 @@ const Dashboard = () => {
             <div className="conic w-[75px] h-[75px] sm:w-[75px] md:w-[100px] lg:w-[150px] xl:w-[250px] sm:h-[75px] md:h-[100px] lg:h-[150px] xl:h-[250px] rounded-full relative flex justify-center items-center">
               <div className="bg-white absolute w-[60px] h-[60px] sm:w-[60px] md:w-[85px] lg:w-[125px] xl:w-[200px] sm:h-[60px] md:h-[85px] lg:h-[125px] xl:h-[200px] rounded-full flex justify-center items-center md:leading-5 lg:leading-10">
                 <h2 className="md:text-[20px] lg:text-[30px] xl:text-[41px] font-bold text-center">
-                  23 <br />
+                  25 <br />
                   Acres
                 </h2>
               </div>
